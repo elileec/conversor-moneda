@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
     //incio programa//
         Scanner leerOpcion = new Scanner(System.in);
-        double cantidad =0;
+        double valor =0;
         int eleccion = 0;
 
         while(eleccion != 7){
@@ -28,43 +28,30 @@ public class Main {
             System.out.println("7) Para finalizar");
             eleccion = leerOpcion.nextInt();
             leerOpcion.nextLine();
-            System.out.println("Ingrese la cantidad: ");
-            cantidad = leerOpcion.nextDouble();
+            System.out.println("Ingrese valor a convertir: ");
+            valor = leerOpcion.nextDouble();
 
             switch (eleccion){
                 case 1:
 
-                    CambiarMoneda.cambiar("USD","ARS", cantidad);
-
-                    System.out.println("Estoy en la conversión de dolar a pesos argentinos");
-                    String direccion = "https://v6.exchangerate-api.com/v6/ebabc15432c2a2d18242d857/pair/USD/COP";
-                    HttpClient client = HttpClient.newHttpClient();
-                    HttpRequest request = HttpRequest.newBuilder()
-                            .uri(URI.create(direccion))
-                            .build();
-                    HttpResponse<String> response = client
-                            .send(request, HttpResponse.BodyHandlers.ofString());
-                    String json = response.body();
-                    System.out.println(json);
-                   Gson gson = new Gson();
-                    CambiarMoneda miConversor;
-                    miConversor = gson.fromJson(json, CambiarMoneda.class);
-
+                    CambiarMoneda.cambiar("USD","ARS", valor);
                     break;
                 case 2:
-                    System.out.println("Estoy en la conversion de peso argetino a dolar");
+                    CambiarMoneda.cambiar("ARS","USD", valor);
                     break;
                 case 3:
-                    System.out.println("Estoy en la conversion dolar a reala brasileño");
+
+                    CambiarMoneda.cambiar("USD","BRL", valor);
                     break;
                 case 4:
-                    System.out.println("Estoy en la conversion de real brasil a dolar");
+                    CambiarMoneda.cambiar("BRL","USD", valor);
                     break;
                 case 5:
-                    System.out.println("Estoy conversion dolar a peso colombiano");
+                    CambiarMoneda.cambiar("USD","COP", valor);
                     break;
                 case 6:
-                    System.out.println("Estoy conversion peso colombiano a dolar");
+                    CambiarMoneda.cambiar("COP","USD", valor);
+                    break;
                 case 7:
                     System.out.println("finalizacion del programa");
                     break;
