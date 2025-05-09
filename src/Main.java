@@ -1,12 +1,21 @@
+import com.google.gson.Gson;
+import moneda.CambiarMoneda;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException {
     //incio programa//
         Scanner leerOpcion = new Scanner(System.in);
-        int opcion = 0;
+        double cantidad =0;
+        int eleccion = 0;
 
-        while(opcion != 7){
+        while(eleccion != 7){
             System.out.println("*****************************************");
             System.out.println("Sea bienvenido al conversor de moneda**");
 
@@ -17,11 +26,30 @@ public class Main {
             System.out.println("5) Dolar a Peso Colombiano");
             System.out.println("6) Peso Colombiano a Dolar");
             System.out.println("7) Para finalizar");
-            opcion = leerOpcion.nextInt();
+            eleccion = leerOpcion.nextInt();
+            leerOpcion.nextLine();
+            System.out.println("Ingrese la cantidad: ");
+            cantidad = leerOpcion.nextDouble();
 
-            switch (opcion){
+            switch (eleccion){
                 case 1:
+
+                    CambiarMoneda.cambiar("USD","ARS", cantidad);
+
                     System.out.println("Estoy en la conversión de dolar a pesos argentinos");
+                    String direccion = "https://v6.exchangerate-api.com/v6/ebabc15432c2a2d18242d857/pair/USD/COP";
+                    HttpClient client = HttpClient.newHttpClient();
+                    HttpRequest request = HttpRequest.newBuilder()
+                            .uri(URI.create(direccion))
+                            .build();
+                    HttpResponse<String> response = client
+                            .send(request, HttpResponse.BodyHandlers.ofString());
+                    String json = response.body();
+                    System.out.println(json);
+                   Gson gson = new Gson();
+                    CambiarMoneda miConversor;
+                    miConversor = gson.fromJson(json, CambiarMoneda.class);
+
                     break;
                 case 2:
                     System.out.println("Estoy en la conversion de peso argetino a dolar");
