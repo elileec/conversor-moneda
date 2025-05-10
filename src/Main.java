@@ -12,13 +12,11 @@ public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
     //incio programa//
         Scanner leerOpcion = new Scanner(System.in);
-        double valor =0;
         int eleccion = 0;
 
         while(eleccion != 7){
             System.out.println("*****************************************");
-            System.out.println("Sea bienvenido al conversor de moneda**");
-
+            System.out.println(" BIENVENIDO AL PROGRAMA CONVERSOR DE MONEDA ");
             System.out.println("1) Dolar a Peso Argentino");
             System.out.println("2) Peso Argentino a Dolar");
             System.out.println("3) Dolar a Real Brasileño");
@@ -26,45 +24,39 @@ public class Main {
             System.out.println("5) Dolar a Peso Colombiano");
             System.out.println("6) Peso Colombiano a Dolar");
             System.out.println("7) Para finalizar");
+            System.out.println("Seleccione una opción valida: ");
             eleccion = leerOpcion.nextInt();
             leerOpcion.nextLine();
-            System.out.println("Ingrese valor a convertir: ");
-            valor = leerOpcion.nextDouble();
-
             switch (eleccion){
                 case 1:
-
-                    CambiarMoneda.cambiar("USD","ARS", valor);
+                    CambiarMoneda.cambiar("USD","ARS");
                     break;
                 case 2:
-                    CambiarMoneda.cambiar("ARS","USD", valor);
+                    CambiarMoneda.cambiar("ARS","USD");
                     break;
                 case 3:
 
-                    CambiarMoneda.cambiar("USD","BRL", valor);
+                    CambiarMoneda.cambiar("USD","BRL");
                     break;
                 case 4:
-                    CambiarMoneda.cambiar("BRL","USD", valor);
+                    CambiarMoneda.cambiar("BRL","USD");
                     break;
                 case 5:
-                    CambiarMoneda.cambiar("USD","COP", valor);
+                    CambiarMoneda.cambiar("USD","COP");
                     break;
                 case 6:
-                    CambiarMoneda.cambiar("COP","USD", valor);
+                    CambiarMoneda.cambiar("COP","USD");
                     break;
                 case 7:
-                    System.out.println("finalizacion del programa");
+                    System.out.println("Programa finalizado");
                     break;
                 default:
-                    System.out.println("opcion no valida");
+                    System.out.println("La opción ingresa no es valida");
                     break;
 
-
-
-                
             }
         }
-        System.out.println("SALI DEL WHILE");
+
     }
 
 }
