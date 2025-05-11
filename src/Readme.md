@@ -3,6 +3,7 @@
 El proyecto permite convertir un valor de una moneda origen a otra moneda.
 
 ## Funcionalidades
+El programa tiene un menú con las diferentes opciones de conversión de moneda origen a otras monedas y la opción de salir del programa.
 
 
 ## Tecnologías utilizadas
