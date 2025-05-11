@@ -38,8 +38,9 @@ public class CambiarMoneda {
     MonedaOmdb miConversor;
     miConversor = gson.fromJson(json, MonedaOmdb.class);
     valorFinal = miConversor.conversion_rate()*valor;
+    String resultado = String.format("%.7f", valorFinal); //permite ver el resultado hasta con 7 decimales
     System.out.println("\n ***************************************************");
-    System.out.println(valor+" "+base_code+" es igual a:  "+valorFinal+" "+target_code);
+    System.out.println(valor+" "+base_code+" es igual a:  "+resultado+" "+target_code);
   }
 
 
