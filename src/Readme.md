@@ -3,7 +3,8 @@
 El proyecto permite convertir un valor de una moneda origen a otra moneda.
 
 ## Funcionalidades
-El programa tiene un menú con las diferentes opciones de conversión de moneda origen a otras monedas y la opción de salir del programa.
+El programa tiene un menú con las diferentes opciones para convertir de una moneda origen a otra moneda y la opción de salir del programa. Muestra el mensaje correspondiente al
+resultado de multiplicar el valor ingresado por la moneda seleccionada
 
 https://github.com/user-attachments/assets/f0be3235-101b-4f2b-b954-390ec4b0c2c3
 
@@ -11,20 +12,11 @@ https://github.com/user-attachments/assets/f0be3235-101b-4f2b-b954-390ec4b0c2c3
 <ol>
   <li>Java JDK</li>
   <li>IDE: IntelliJ IDEA</li>
+  <li>Biblioteca conversor de JSON a clases Java Gson de google</li>
   <li>GitHub para control de versiones</li>
   <li>ExchangeRate-API:conversión de moneda</li>
-  <li></li>
 </ol>
 
+## Autor del proyecto
 
-
--
--
-## Instalación
-Describir todos los paaos para utilizar y correr el codigo
-
-## Colaboración
-
-Quienes pueden partcipar y como 
-
-Dejo una imagen para mostrar funcionamiento
+LUIS ECHEVERRI CASTAÑO 
