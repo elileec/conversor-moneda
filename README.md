@@ -17,7 +17,8 @@ https://github.com/user-attachments/assets/f0be3235-101b-4f2b-b954-390ec4b0c2c3
   <li>ExchangeRate-API:conversión de moneda</li>
 </ol>
 
-## 📁 Tecnologías utilizadas Acceso al proyecto: Acceso al código fuente del proyecto.
+## 📁 Acceso al proyecto: Acceso al código fuente del proyecto.
+https://github.com/elileec/conversor-moneda.git
 
 ## Autor del proyecto
 
