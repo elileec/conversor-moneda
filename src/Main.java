@@ -11,6 +11,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
     //incio programa//
+        //la variable eleccion almacena el valor que selecciona el usuario
+        //el metodo cambiar moneda.acambiar llama la clase y el metodo con las monedas a calcular
+
         Scanner leerOpcion = new Scanner(System.in);
         int eleccion = 0;
 

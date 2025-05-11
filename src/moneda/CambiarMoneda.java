@@ -13,17 +13,19 @@ import java.util.Scanner;
 public class CambiarMoneda {
 
   public static void cambiar(String base_code, String target_code) throws IOException, InterruptedException {
-    double valor;
-    double valorFinal;
+    double valor; // variablea para almacenar el valor a convertir
+    double valorFinal; // variable que almacena el valor de la conversion
     Scanner leer = new Scanner(System.in);
     System.out.println("INGRESE EL VALOR A CONVERTIR EN: "+base_code);
     valor = leer.nextDouble();
 
-   // System.out.println("VALORES RECIBOS "+ base_code + target_code+" y la cantidad "+valor);
 
 
+    // consumo de la API
+    // analisis respuesta json
+    // calculo conversion de la moneda y muestra del resultado
     String direccion = "https://v6.exchangerate-api.com/v6/ebabc15432c2a2d18242d857/pair/"+base_code+"/"+target_code;
-   // System.out.println("la direccion es "+ direccion);
+
     HttpClient client = HttpClient.newHttpClient();
     HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create(direccion))
@@ -31,7 +33,7 @@ public class CambiarMoneda {
     HttpResponse<String> response = client
             .send(request, HttpResponse.BodyHandlers.ofString());
     String json = response.body();
-   // System.out.println(json);
+
     Gson gson = new Gson();
     MonedaOmdb miConversor;
     miConversor = gson.fromJson(json, MonedaOmdb.class);
