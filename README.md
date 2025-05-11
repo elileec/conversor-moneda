@@ -14,7 +14,7 @@ https://github.com/user-attachments/assets/f0be3235-101b-4f2b-b954-390ec4b0c2c3
   <li>IDE: IntelliJ IDEA</li>
   <li>Biblioteca conversor de JSON a clases Java Gson de google</li>
   <li>GitHub para control de versiones</li>
-  <li>ExchangeRate-API:conversión de moneda</li>
+  <li>ExchangeRate-API</li>
 </ol>
 
 ## 📁 Acceso al proyecto: Acceso al código fuente del proyecto.
