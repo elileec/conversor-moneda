@@ -24,7 +24,7 @@ public class CambiarMoneda {
     // consumo de la API
     // analisis respuesta json
     // calculo conversion de la moneda y muestra del resultado
-    String direccion = "https://v6.exchangerate-api.com/v6/ebabc15432c2a2d18242d857/pair/"+base_code+"/"+target_code;
+    String direccion = "https://v6.exchangerate-api.com/v6/xxxxxxxx/pair/"+base_code+"/"+target_code;
 
     HttpClient client = HttpClient.newHttpClient();
     HttpRequest request = HttpRequest.newBuilder()
